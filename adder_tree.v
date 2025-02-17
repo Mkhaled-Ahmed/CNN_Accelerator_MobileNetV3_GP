@@ -3,7 +3,7 @@ module adder_27 #(
     parameter NUM_INPUTS = 27
 )(
     input wire clk,
-    input wire reset,
+    input wire rst,
     input wire [NUM_INPUTS*DATA_WIDTH-1:0] input_numbers,
     output reg [DATA_WIDTH-1:0] sum_output,
     output reg data_valid
@@ -25,8 +25,8 @@ module adder_27 #(
         STAGE5 = 3'b101,
         COMPLETE = 3'b110;
 
-    always @(posedge clk or posedge reset) begin
-        if (reset) begin
+    always @(posedge clk or negedge rst) begin
+        if (rst) begin
             pipeline_state <= STAGE1;
             data_valid <= 0;
         end else begin
