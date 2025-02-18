@@ -35,7 +35,7 @@ module adder_tb();
         rst=1;
         @(negedge clk);
         for (i =1 ;i<=27 ;i=i+1 ) begin
-            input_numbers[(i-1)*bitsize+:bitsize] = i*2; 
+            input_numbers[(i-1)*bitsize+:bitsize] = i*-2; 
         end
         repeat(5) @(negedge clk);
         $display("sum_output = %d",sum_output);

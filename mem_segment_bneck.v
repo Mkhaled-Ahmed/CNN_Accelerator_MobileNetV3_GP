@@ -15,7 +15,7 @@ module mem_segment_bneck(data_in,clk,index,en,rd,wr,rst,data_out);
 
     assign data_out=data_out_temp;
 
-    always @(posedge clk) begin
+    always @(posedge clk or negedge rst) begin
         if(!rst)begin
             data_out_temp<=0;
         end
