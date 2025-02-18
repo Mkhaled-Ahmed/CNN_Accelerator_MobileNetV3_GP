@@ -100,9 +100,9 @@ endmodule
 
 
 module adder_32 #(
-    parameter DATA_WIDTH = 12,    // Total width (Q7.5 format)
-    parameter FRAC_WIDTH = 5,     // Fractional bits
-    parameter NUM_INPUTS = 32     // Number of inputs
+    parameter DATA_WIDTH = 14,    // Total width (Q7.5 format)
+    parameter FRAC_WIDTH = 8,     // Fractional bits
+    parameter NUM_INPUTS = 27     // Number of inputs
 )(
     input wire clk,
     input wire reset,
@@ -140,8 +140,8 @@ module adder_32 #(
     
     integer i;
     
-    always @(posedge clk or posedge reset) begin
-        if (reset) begin
+    always @(posedge clk or negedge reset) begin
+        if (!reset) begin
             // Reset all pipeline stages
             for (i = 0; i < 16; i = i + 1) stage1_sums[i] <= 0;
             for (i = 0; i < 8; i = i + 1) stage2_sums[i] <= 0;
@@ -200,12 +200,12 @@ module adder_32 #(
             if (valid_pipeline[5]) begin
                 // Determine if we should round up
                 round_up <= (round_bit && sticky_bit) || 
-                           (round_bit && !sticky_bit && final_sum[FRAC_WIDTH]);
+                            (round_bit && !sticky_bit && final_sum[FRAC_WIDTH]);
                 
                 // Apply rounding
                 rounded_sum <= round_up ? 
-                             (final_sum + (1 << (FRAC_WIDTH - 1))) : 
-                             final_sum;
+                    (final_sum + (1 << (FRAC_WIDTH - 1))) : 
+                    final_sum;
                 
                 $display("Final Sum (before rounding): %b", final_sum);
                 $display("Round bit: %b, Sticky bit: %b", round_bit, sticky_bit);

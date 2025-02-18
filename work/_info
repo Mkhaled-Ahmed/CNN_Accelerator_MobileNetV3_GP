@@ -1,0 +1,127 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+!s11f vlog 2021.1 2021.01, Jan 19 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dE:/GP_RTL/CNN_Accelerator_MobileNetV3_GP
+T_opt
+!s110 1739912486
+VUBJ5hf_ggGa6=V?T0XU>30
+Z2 04 8 4 work adder_tb fast 0
+=1-5c879c276c62-67b4f526-23a-4d84
+Z3 !s124 OEM100
+Z4 o-quiet -auto_acc_if_foreign -work work +acc
+Z5 tCvgOpt 0
+n@_opt
+Z6 OL;O;2021.1;73
+R1
+T_opt1
+!s110 1739912651
+Vze6agI[jT[cPP]0O7IDTf2
+R2
+=1-5c879c276c62-67b4f5ca-359-a88
+R3
+R4
+R5
+n@_opt1
+R6
+R1
+T_opt2
+!s110 1739914797
+V8iBC?9=LLXWj2k9j2:;Q?3
+R2
+=1-5c879c276c62-67b4fe2d-220-48d0
+R3
+R4
+R5
+n@_opt2
+R6
+vadder_27
+Z7 !s110 1739914789
+!i10b 1
+!s100 L5E4RDeo97Xo58@a0KQm80
+I095h`;LaVSi3^Y;QK?Hfi2
+R1
+w1739914527
+8adder_tree.v
+Fadder_tree.v
+!i122 26
+L0 1 123
+Z8 VDg1SIo80bB@j0V0VzS_@n1
+Z9 OL;L;2021.1;73
+r1
+!s85 0
+31
+Z10 !s108 1739914789.000000
+!s107 adder_tree.v|
+!s90 adder_tree.v|
+!i113 0
+Z11 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R5
+vadder_32
+!s110 1739911974
+!i10b 1
+!s100 0?M1n`?[b_QgK[1=:F`U:0
+Ia3LTMTN7>M_aPCc@X][gU0
+R1
+w1739911942
+8temp\adder_32.v
+Ftemp\adder_32.v
+!i122 10
+L0 102 129
+R8
+R9
+r1
+!s85 0
+31
+!s108 1739911974.000000
+!s107 temp\adder_32.v|
+!s90 temp\adder_32.v|
+!i113 0
+R11
+R5
+vadder_tb
+R7
+!i10b 1
+!s100 =9Z=86CoQY?MA^2A^?@EU2
+IeOPlf]71UHO@9_Y4eW=YU1
+R1
+w1739914781
+8tb.v
+Ftb.v
+!i122 27
+L0 1 47
+R8
+R9
+r1
+!s85 0
+31
+R10
+!s107 tb.v|
+!s90 tb.v|
+!i113 0
+R11
+R5
