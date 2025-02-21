@@ -15,7 +15,8 @@ module adder_tb();
         .rst(rst),
         .input_numbers(input_numbers),
         .sum_output(sum_output),
-        .data_valid(data_valid)
+        .data_valid(data_valid),
+        .start_adder(1'b1)
     );
     always begin
         #10 clk = ~clk;
@@ -23,25 +24,32 @@ module adder_tb();
 
     initial begin
         for (i =1 ;i<=27 ;i=i+1 ) begin
-            input_numbers[(i-1)*bitsize+:bitsize] = i; 
+            input_numbers[(i-1)*bitsize+:bitsize] = -i; 
         end
         // for (i =1 ;i<=27 ;i=i+1 ) begin
         //     $display(input_numbers[(i-1)*bitsize+:bitsize]); 
+        // end
+
+                // for (i =1 ;i<=27 ;i=i+1 ) begin
+        //     input_numbers[(i-1)*bitsize+:bitsize] = i*-2; 
         // end
         clk=0;
         rst=0;
         
         @(negedge clk);
         rst=1;
-        @(negedge clk);
-        for (i =1 ;i<=27 ;i=i+1 ) begin
-            input_numbers[(i-1)*bitsize+:bitsize] = i*-2; 
-        end
-        repeat(5) @(negedge clk);
+        repeat(7)@(negedge clk);
         $display("sum_output = %d",sum_output);
-        @(negedge clk);
-        $display("sum_output = %d",sum_output);
+        $display("stage5 = %d",adder_27_inst.stage5_sum);
+        $display("data_valid = %d",data_valid);
         $stop;
     end
 
 endmodule
+
+
+//!01011011100100
+//?01111111111111
+
+//0110111011011100011
+//1101010100100011101
