@@ -1,9 +1,9 @@
-module conv_2d_adder_16(data_in,valid_in,rst,clk,dataout,valid_out);//! need control signals in adder asap
+module conv2d_adder_16(data_in,start_adder,rst,clk,dataout,valid_out);//! need control signals in adder asap
     parameter bitsize = 14;
     parameter NUM_INPUTS = 27;
 
     input wire signed [bitsize*27*16-1:0] data_in;
-    input wire valid_in;
+    input wire start_adder;
     input wire rst;
     input wire clk;
 
@@ -19,6 +19,7 @@ module conv_2d_adder_16(data_in,valid_in,rst,clk,dataout,valid_out);//! need con
                 adder_27_inst(
                     .clk(clk)
                     ,.rst(rst)
+                    ,.start_adder(start_adder)
                     ,.input_numbers(data_in[i*27*bitsize + 27*bitsize-1:i*27*bitsize])
                     ,.sum_output(dataout[i*bitsize + bitsize-1:i*bitsize])
                     ,.data_valid(valid_out_temp[i])

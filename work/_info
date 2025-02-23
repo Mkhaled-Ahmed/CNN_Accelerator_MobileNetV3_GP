@@ -4,51 +4,7 @@ z2
 Z0 !s99 nomlopt
 R0
 R0
-R0
-R0
-R0
-R0
-R0
-R0
-R0
-R0
-R0
-R0
-R0
-R0
-R0
-R0
-R0
-R0
-R0
-R0
-R0
-R0
-R0
-R0
-R0
-R0
-R0
-R0
-R0
-R0
-R0
-R0
-R0
-R0
-R0
-R0
-R0
-R0
-R0
-R0
-R0
-R0
-R0
-R0
-R0
-R0
-!s11f vlog 2021.1 2021.01, Jan 19 2021
+!s11f MIXED_VERSIONS
 13
 !s112 1.1
 !i10d 8192
@@ -57,105 +13,105 @@ R0
 cModel Technology
 Z1 dE:/GP_RTL/CNN_Accelerator_MobileNetV3_GP
 T_opt
-!s110 1739912486
-VUBJ5hf_ggGa6=V?T0XU>30
-Z2 04 8 4 work adder_tb fast 0
-=1-5c879c276c62-67b4f526-23a-4d84
-Z3 !s124 OEM100
-Z4 o-quiet -auto_acc_if_foreign -work work +acc
-Z5 tCvgOpt 0
+!s110 1740341567
+Vhm@ekL=4b8BKYG;Tke?490
+04 6 4 work conv2d fast 0
+=1-9c5a446b5ec6-67bb813f-62-4d20
+!s124 OEM100
+o-quiet -auto_acc_if_foreign -work work +acc
+Z2 tCvgOpt 0
 n@_opt
-Z6 OL;O;2021.1;73
-R1
-T_opt1
-!s110 1739912651
-Vze6agI[jT[cPP]0O7IDTf2
-R2
-=1-5c879c276c62-67b4f5ca-359-a88
-R3
-R4
-R5
-n@_opt1
-R6
-R1
-T_opt2
-!s110 1740169956
-VcF9=KZjb`UHQ4QDkabU521
-04 8 4 work tp_multi fast 0
-=1-9c5a446b5ec6-67b8e2e4-2bb-550c
-R3
-R4
-R5
-n@_opt2
-R6
+OL;O;2021.1;73
 vadder_27
-Z7 !s110 1740168067
+Z3 !s110 1740341557
 !i10b 1
 !s100 k:<GUI6W:1NZ@?cLJ1<513
 IhiC70kCgaO924zTD8:lUz1
 R1
-w1740167903
+w1740168369
 8adder_tree.v
 Fadder_tree.v
-!i122 87
+!i122 8
 L0 1 200
-Z8 VDg1SIo80bB@j0V0VzS_@n1
-Z9 OL;L;2021.1;73
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+Z5 OL;L;2021.1;73
 r1
 !s85 0
 31
-Z10 !s108 1740168067.000000
-!s107 adder_tree.v|
-!s90 adder_tree.v|
+Z6 !s108 1740341557.000000
+Z7 !s107 conv2d.v|conv2d_relu_16.v|relu_segment.v|conv2d_adder_16.v|adder_tree.v|fixed_point_multiplier_27X16.v|fixed_point_multiplier_27.v|fixed_point_multiplier.v|
+Z8 !s90 -f|list.list|
 !i113 0
-Z11 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R5
-vadder_32
-!s110 1739911974
+Z9 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+vconv2d
+R3
 !i10b 1
-!s100 0?M1n`?[b_QgK[1=:F`U:0
-Ia3LTMTN7>M_aPCc@X][gU0
+!s100 Q5_XV:C1H[2Bi7CYce[<b1
+Ij047nCLg?cDjnJIk02PRD2
 R1
-w1739911942
-8temp\adder_32.v
-Ftemp\adder_32.v
-!i122 10
-L0 102 129
-R8
-R9
+w1740341545
+8conv2d.v
+Fconv2d.v
+!i122 8
+L0 1 63
+R4
+R5
 r1
 !s85 0
 31
-!s108 1739911974.000000
-!s107 temp\adder_32.v|
-!s90 temp\adder_32.v|
-!i113 0
-R11
-R5
-vadder_tb
+R6
 R7
-!i10b 1
-!s100 ^D>G<Sg;<Lc1d?Rg=h^1g3
-I=R:P]h7Y:Ao[l>_I7?f0:2
-R1
-w1740168066
-8tb.v
-Ftb.v
-!i122 88
-L0 1 48
 R8
+!i113 0
 R9
+R2
+vconv2d_adder_16
+R3
+!i10b 1
+!s100 FJG3bnYY3><L3l2dOk6AM0
+IA1IMV4HhTJRdce:iHHOcV3
+R1
+w1740341006
+8conv2d_adder_16.v
+Fconv2d_adder_16.v
+!i122 8
+L0 1 30
+R4
+R5
 r1
 !s85 0
 31
-R10
-!s107 tb.v|
-!s90 tb.v|
+R6
+R7
+R8
 !i113 0
-R11
+R9
+R2
+vconv2d_relu_16
+R3
+!i10b 1
+!s100 ;k7;EKgI9nf10`0AfF2;m1
+IdFNUP_O^3MWc:7OgDGJio3
+R1
+w1740340506
+8conv2d_relu_16.v
+Fconv2d_relu_16.v
+!i122 8
+L0 1 28
+R4
 R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 0
+R9
+R2
 vfixed_point_multiplier
-Z12 !s110 1740169949
+R3
 !i10b 1
 !s100 N?2<4a:]G<CVX9Wh2iMhY2
 IbBjH[jJ3k41=VVcd?n5]G2
@@ -163,38 +119,83 @@ R1
 w1739830111
 8fixed_point_multiplier.v
 Ffixed_point_multiplier.v
-!i122 101
+!i122 8
 L0 1 105
-R8
-R9
+R4
+R5
 r1
 !s85 0
 31
-Z13 !s108 1740169949.000000
-!s107 fixed_point_multiplier.v|
-!s90 fixed_point_multiplier.v|
+R6
+R7
+R8
 !i113 0
-R11
-R5
-vtp_multi
-R12
+R9
+R2
+vfixed_point_multiplier_27
+R3
 !i10b 1
-!s100 1iTN2XJYQDVSIkgPn0MhB1
-I[ZY`N5h;ni_`bk3dhGd8m1
+!s100 >fQl`Rh1W>R[D0DfS?e4@2
+IO`1KIjBe54;h^oUMQHU:V0
 R1
-w1740169947
-8tp_multi.v
-Ftp_multi.v
-!i122 102
-L0 1 42
-R8
-R9
+w1739830408
+8fixed_point_multiplier_27.v
+Ffixed_point_multiplier_27.v
+!i122 8
+Z10 L0 1 35
+R4
+R5
 r1
 !s85 0
 31
-R13
-!s107 tp_multi.v|
-!s90 tp_multi.v|
+R6
+R7
+R8
 !i113 0
-R11
+R9
+R2
+vfixed_point_multiplier_27X16
+R3
+!i10b 1
+!s100 I>^9RSK6JNKRXX8Q3_1QQ2
+IQ5OY9Jb?L1E7D8_55afe63
+R1
+w1739831163
+8fixed_point_multiplier_27X16.v
+Ffixed_point_multiplier_27X16.v
+!i122 8
+R10
+R4
 R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 0
+R9
+R2
+nfixed_point_multiplier_27@x16
+vrelu_segment
+R3
+!i10b 1
+!s100 Fi[`;9IW[nCUmIOkZ9ekk2
+IRM9dNk]4QO;?HFNITWLg21
+R1
+w1740339406
+8relu_segment.v
+Frelu_segment.v
+!i122 8
+L0 1 43
+R4
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 0
+R9
+R2
