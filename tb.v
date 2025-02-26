@@ -6,9 +6,10 @@ module adder_tb();
     reg clk;
     reg rst;
     reg signed  [NUM_INPUTS*bitsize-1:0] input_numbers;
-    wire signed [bitsize-1:0] sum_output;
+    wire signed [bitsize+6:0] sum_output;
     wire data_valid;
     reg [bitsize-1:0]i; 
+    integer file;
 
     adder_27 adder_27_inst(
         .clk(clk),
@@ -24,7 +25,7 @@ module adder_tb();
 
     initial begin
         for (i =1 ;i<=27 ;i=i+1 ) begin
-            input_numbers[(i-1)*bitsize+:bitsize] = -i; 
+            input_numbers[(i-1)*bitsize+:bitsize] = 14'b0000011_0100000; 
         end
         // for (i =1 ;i<=27 ;i=i+1 ) begin
         //     $display(input_numbers[(i-1)*bitsize+:bitsize]); 
@@ -39,9 +40,13 @@ module adder_tb();
         @(negedge clk);
         rst=1;
         repeat(7)@(negedge clk);
-        $display("sum_output = %d",sum_output);
-        $display("stage5 = %d",adder_27_inst.stage5_sum);
-        $display("data_valid = %d",data_valid);
+        $display("sum_output = %b",sum_output);
+        file=$fopen("output.txt","w");
+        $fwrite(file,"%b",sum_output);
+        $fclose(file);
+
+        //$display("stage5 = %d",adder_27_inst.stage5_sum);
+        //$display("data_valid = %d",data_valid);
         $stop;
     end
 

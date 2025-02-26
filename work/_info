@@ -4,6 +4,28 @@ z2
 Z0 !s99 nomlopt
 R0
 R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
 !s11f MIXED_VERSIONS
 13
 !s112 1.1
@@ -17,35 +39,69 @@ T_opt
 Vhm@ekL=4b8BKYG;Tke?490
 04 6 4 work conv2d fast 0
 =1-9c5a446b5ec6-67bb813f-62-4d20
-!s124 OEM100
-o-quiet -auto_acc_if_foreign -work work +acc
-Z2 tCvgOpt 0
+Z2 !s124 OEM100
+Z3 o-quiet -auto_acc_if_foreign -work work +acc
+Z4 tCvgOpt 0
 n@_opt
-OL;O;2021.1;73
-vadder_27
-Z3 !s110 1740341557
-!i10b 1
-!s100 k:<GUI6W:1NZ@?cLJ1<513
-IhiC70kCgaO924zTD8:lUz1
+Z5 OL;O;2021.1;73
 R1
-w1740168369
+T_opt1
+!s110 1740582894
+VY58WobJeaZ6;JK6R8MaL71
+04 8 4 work adder_tb fast 0
+=1-9c5a446b5ec6-67bf2fed-33e-63f0
+R2
+R3
+R4
+n@_opt1
+R5
+R1
+vadder_27
+Z6 !s110 1740582941
+!i10b 1
+!s100 Z]VhD4Vn=1?^zfTOT<cmU0
+I8TkHdf7fVHA8?g;LiFg?m2
+R1
+w1740576541
 8adder_tree.v
 Fadder_tree.v
-!i122 8
-L0 1 200
-Z4 VDg1SIo80bB@j0V0VzS_@n1
-Z5 OL;L;2021.1;73
+!i122 73
+L0 1 206
+Z7 VDg1SIo80bB@j0V0VzS_@n1
+Z8 OL;L;2021.1;73
 r1
 !s85 0
 31
-Z6 !s108 1740341557.000000
-Z7 !s107 conv2d.v|conv2d_relu_16.v|relu_segment.v|conv2d_adder_16.v|adder_tree.v|fixed_point_multiplier_27X16.v|fixed_point_multiplier_27.v|fixed_point_multiplier.v|
-Z8 !s90 -f|list.list|
+Z9 !s108 1740582941.000000
+!s107 adder_tree.v|
+!s90 adder_tree.v|
 !i113 0
-Z9 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R2
+Z10 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R4
+vadder_tb
+R6
+!i10b 1
+!s100 P_[KO3SiSc=]X8^f=ABUm0
+IKXQ:lVeR`DRfVi^k7_PKG3
+R1
+w1740582885
+8tb.v
+Ftb.v
+!i122 74
+L0 1 53
+R7
+R8
+r1
+!s85 0
+31
+R9
+!s107 tb.v|
+!s90 tb.v|
+!i113 0
+R10
+R4
 vconv2d
-R3
+Z11 !s110 1740341557
 !i10b 1
 !s100 Q5_XV:C1H[2Bi7CYce[<b1
 Ij047nCLg?cDjnJIk02PRD2
@@ -55,19 +111,19 @@ w1740341545
 Fconv2d.v
 !i122 8
 L0 1 63
-R4
-R5
+R7
+R8
 r1
 !s85 0
 31
-R6
-R7
-R8
+Z12 !s108 1740341557.000000
+Z13 !s107 conv2d.v|conv2d_relu_16.v|relu_segment.v|conv2d_adder_16.v|adder_tree.v|fixed_point_multiplier_27X16.v|fixed_point_multiplier_27.v|fixed_point_multiplier.v|
+Z14 !s90 -f|list.list|
 !i113 0
-R9
-R2
+R10
+R4
 vconv2d_adder_16
-R3
+R11
 !i10b 1
 !s100 FJG3bnYY3><L3l2dOk6AM0
 IA1IMV4HhTJRdce:iHHOcV3
@@ -77,19 +133,19 @@ w1740341006
 Fconv2d_adder_16.v
 !i122 8
 L0 1 30
-R4
-R5
+R7
+R8
 r1
 !s85 0
 31
-R6
-R7
-R8
+R12
+R13
+R14
 !i113 0
-R9
-R2
+R10
+R4
 vconv2d_relu_16
-R3
+R11
 !i10b 1
 !s100 ;k7;EKgI9nf10`0AfF2;m1
 IdFNUP_O^3MWc:7OgDGJio3
@@ -99,19 +155,19 @@ w1740340506
 Fconv2d_relu_16.v
 !i122 8
 L0 1 28
-R4
-R5
+R7
+R8
 r1
 !s85 0
 31
-R6
-R7
-R8
+R12
+R13
+R14
 !i113 0
-R9
-R2
+R10
+R4
 vfixed_point_multiplier
-R3
+R11
 !i10b 1
 !s100 N?2<4a:]G<CVX9Wh2iMhY2
 IbBjH[jJ3k41=VVcd?n5]G2
@@ -121,19 +177,19 @@ w1739830111
 Ffixed_point_multiplier.v
 !i122 8
 L0 1 105
-R4
-R5
+R7
+R8
 r1
 !s85 0
 31
-R6
-R7
-R8
+R12
+R13
+R14
 !i113 0
-R9
-R2
+R10
+R4
 vfixed_point_multiplier_27
-R3
+R11
 !i10b 1
 !s100 >fQl`Rh1W>R[D0DfS?e4@2
 IO`1KIjBe54;h^oUMQHU:V0
@@ -142,20 +198,20 @@ w1739830408
 8fixed_point_multiplier_27.v
 Ffixed_point_multiplier_27.v
 !i122 8
-Z10 L0 1 35
-R4
-R5
+Z15 L0 1 35
+R7
+R8
 r1
 !s85 0
 31
-R6
-R7
-R8
+R12
+R13
+R14
 !i113 0
-R9
-R2
+R10
+R4
 vfixed_point_multiplier_27X16
-R3
+R11
 !i10b 1
 !s100 I>^9RSK6JNKRXX8Q3_1QQ2
 IQ5OY9Jb?L1E7D8_55afe63
@@ -164,21 +220,21 @@ w1739831163
 8fixed_point_multiplier_27X16.v
 Ffixed_point_multiplier_27X16.v
 !i122 8
-R10
-R4
-R5
+R15
+R7
+R8
 r1
 !s85 0
 31
-R6
-R7
-R8
+R12
+R13
+R14
 !i113 0
-R9
-R2
+R10
+R4
 nfixed_point_multiplier_27@x16
 vrelu_segment
-R3
+R11
 !i10b 1
 !s100 Fi[`;9IW[nCUmIOkZ9ekk2
 IRM9dNk]4QO;?HFNITWLg21
@@ -188,14 +244,14 @@ w1740339406
 Frelu_segment.v
 !i122 8
 L0 1 43
-R4
-R5
+R7
+R8
 r1
 !s85 0
 31
-R6
-R7
-R8
+R12
+R13
+R14
 !i113 0
-R9
-R2
+R10
+R4
