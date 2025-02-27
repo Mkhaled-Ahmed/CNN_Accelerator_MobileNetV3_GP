@@ -5,8 +5,8 @@ def fixed_point_7bit_twos_complement(binary_str):
             return "Invalid binary number"
 
         # Ensure the length is at least 8 bits (1 sign bit + 7 fraction bits)
-        if len(binary_str) < 8:
-            return "Binary number should be at least 8 bits long"
+        # if len(binary_str) < 8:
+        #     return "Binary number should be at least 8 bits long"
 
         # Convert binary to integer using two's complement
         num_bits = len(binary_str)
@@ -17,7 +17,7 @@ def fixed_point_7bit_twos_complement(binary_str):
             integer_value -= (1 << num_bits)
 
         # Convert to fixed-point decimal with 7 fractional bits
-        decimal_value = integer_value / (2 ** 7)
+        decimal_value = integer_value / (2 ** 9)
 
         return decimal_value
 

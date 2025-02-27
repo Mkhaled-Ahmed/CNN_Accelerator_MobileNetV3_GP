@@ -25,7 +25,7 @@ module adder_tb();
 
     initial begin
         for (i =1 ;i<=27 ;i=i+1 ) begin
-            input_numbers[(i-1)*bitsize+:bitsize] = 14'b0000011_0100000; 
+            input_numbers[(i-1)*bitsize+:bitsize] = -14'b0000011_0100000; 
         end
         // for (i =1 ;i<=27 ;i=i+1 ) begin
         //     $display(input_numbers[(i-1)*bitsize+:bitsize]); 
