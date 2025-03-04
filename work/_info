@@ -53,6 +53,15 @@ R0
 R0
 R0
 R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
 !s11f MIXED_VERSIONS
 13
 !s112 1.1
@@ -62,10 +71,10 @@ R0
 cModel Technology
 Z1 dE:/GP_RTL/CNN_Accelerator_MobileNetV3_GP
 T_opt
-!s110 1740341567
-Vhm@ekL=4b8BKYG;Tke?490
-04 6 4 work conv2d fast 0
-=1-9c5a446b5ec6-67bb813f-62-4d20
+!s110 1741129214
+Vh78XRc9kOVc5P]0VWHU>V2
+04 11 4 work fifo_seg_tb fast 0
+=1-9c5a446b5ec6-67c785fd-318-4ff4
 Z2 !s124 OEM100
 Z3 o-quiet -auto_acc_if_foreign -work work +acc
 Z4 tCvgOpt 0
@@ -93,6 +102,7 @@ R3
 R4
 n@_opt2
 R5
+R1
 vadder_27
 Z6 !s110 1740683746
 !i10b 1
@@ -203,8 +213,52 @@ R14
 !i113 0
 R10
 R4
+vfifo_seg_tb
+Z15 !s110 1741129709
+!i10b 1
+!s100 @PWnM?dX=QI8zzzBn?Ymj0
+I1o_86:5TXcPYS2Aja]<Ze2
+R1
+w1741129200
+8fifo_seg_tb.v
+Ffifo_seg_tb.v
+!i122 173
+L0 1 59
+R7
+R8
+r1
+!s85 0
+31
+Z16 !s108 1741129709.000000
+!s107 fifo_seg_tb.v|
+!s90 fifo_seg_tb.v|
+!i113 0
+R10
+R4
+vfifo_segment
+R15
+!i10b 1
+!s100 L;K3R^VW:e:MnJM:ezhMI2
+I>C56C]Z7Q^l][z@n6M?bE3
+R1
+w1741129100
+8fifo_segment.v
+Ffifo_segment.v
+!i122 172
+L0 1 96
+R7
+R8
+r1
+!s85 0
+31
+R16
+!s107 fifo_segment.v|
+!s90 fifo_segment.v|
+!i113 0
+R10
+R4
 vfixed_point_multiplier
-Z15 !s110 1740696186
+Z17 !s110 1740696186
 !i10b 1
 !s100 ViH[eXJ3cIhURoE2:4E[T3
 I>@^^kV_KWz?J?h4M97eTJ1
@@ -219,7 +273,7 @@ R8
 r1
 !s85 0
 31
-Z16 !s108 1740696186.000000
+Z18 !s108 1740696186.000000
 !s107 fixed_point_multiplier.v|
 !s90 fixed_point_multiplier.v|
 !i113 0
@@ -235,7 +289,7 @@ w1739830408
 8fixed_point_multiplier_27.v
 Ffixed_point_multiplier_27.v
 !i122 8
-Z17 L0 1 35
+Z19 L0 1 35
 R7
 R8
 r1
@@ -257,7 +311,7 @@ w1739831163
 8fixed_point_multiplier_27X16.v
 Ffixed_point_multiplier_27X16.v
 !i122 8
-R17
+R19
 R7
 R8
 r1
@@ -293,7 +347,7 @@ R14
 R10
 R4
 vtp_multi
-R15
+R17
 !i10b 1
 !s100 ;=cZCk[^jlg^P0iGI<kHj2
 IA@ERbJcKUX8lhFDjDDZ4]3
@@ -308,7 +362,7 @@ R8
 r1
 !s85 0
 31
-R16
+R18
 !s107 tp_multi.v|
 !s90 tp_multi.v|
 !i113 0

@@ -12,16 +12,35 @@
 # //  is prohibited from disclosure under the Trade Secrets Act,
 # //  18 U.S.C. Section 1905.
 # //
-# vsim -voptargs="+acc" work.adder_tb 
-# Start time: 20:44:25 on Feb 21,2025
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.adder_tb(fast)
-# Loading work.adder_27(fast)
-run -all
-# sum_output =    378
-# data_valid = 1
-# ** Note: $stop    : tb.v(44)
-#    Time: 180 ns  Iteration: 1  Instance: /adder_tb
-# Break in Module adder_tb at tb.v line 44
-# End time: 20:44:51 on Feb 21,2025, Elapsed time: 0:00:26
+# vsim -voptargs="+acc" work.fifo_seg_tb 
+# Start time: 00:52:33 on Mar 05,2025
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.fifo_seg_tb(fast)
+# Loading work.fifo_segment(fast)
+add wave -position insertpoint  \
+sim:/fifo_seg_tb/bitsize \
+sim:/fifo_seg_tb/clk \
+sim:/fifo_seg_tb/rst \
+sim:/fifo_seg_tb/input_pixel \
+sim:/fifo_seg_tb/wr_en \
+sim:/fifo_seg_tb/data_valid \
+sim:/fifo_seg_tb/output_window \
+sim:/fifo_seg_tb/file_input \
+sim:/fifo_seg_tb/file_output \
+sim:/fifo_seg_tb/scan_file
+run
+# Causality operation skipped due to absence of debug database file
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Break key hit
+# Break key hit
+# Break key hit
+# Break key hit
+# Break key hit
+quir
+# invalid command name "quir"
+quit
+# End time: 00:55:39 on Mar 05,2025, Elapsed time: 0:03:06
 # Errors: 0, Warnings: 0
