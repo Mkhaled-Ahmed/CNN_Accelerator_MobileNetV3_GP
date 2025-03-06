@@ -13,7 +13,7 @@ module fifo_segment(clk,
     localparam fifo_size = (image_size+2*padding)*(window_size-1)+(window_size);
     input  clk;
     input  rst;
-    input signed[bitsize:0] input_pixel;
+    input signed[bitsize-1:0] input_pixel;
     input wr_en;
     output data_valid;
 
@@ -25,7 +25,7 @@ module fifo_segment(clk,
 
     reg signed[bitsize-1:0]fifo[fifo_size-1:0];
 
-    reg data_valid_temp;
+    //reg data_valid_temp;
     reg [$clog2(fifo_size)-1:0] ptr;
     always @(posedge clk or negedge rst) begin
         if(!rst)begin
@@ -40,17 +40,15 @@ module fifo_segment(clk,
                 for(i=1;i<fifo_size;i=i+1)begin
                     fifo[i] <= fifo[i-1];
                 end
-                if(ptr < fifo_size)begin
+                if(ptr < fifo_size-1)begin
                     ptr <= ptr + 1;
                 end
-                if(ptr == fifo_size-1)begin
-                    data_valid_temp <= 1;
-                end
+
             end
         end
     end
 
-    assign data_valid = data_valid_temp;
+    assign data_valid = (ptr==fifo_size-1)?1'b1:1'b0;
     generate
         if(window_size==3)begin
             assign output_window [13: 0] = fifo[(image_size+2*padding)*2+2];
