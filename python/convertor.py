@@ -17,7 +17,7 @@ def fixed_point_7bit_twos_complement(binary_str):
             integer_value -= (1 << num_bits)
 
         # Convert to fixed-point decimal with 7 fractional bits
-        decimal_value = integer_value / (2 ** 9)
+        decimal_value = integer_value / (2 ** 28)
 
         return decimal_value
 
@@ -30,7 +30,7 @@ def fixed_point_7bit_twos_complement(binary_str):
 
 # Read binary input from output.txt
 try:
-    with open("output.txt", "r") as file:
+    with open("textfiles\\output.txt", "r") as file:
         binary_inputs = file.readlines()
     
     # Process each binary number in the file

@@ -1,7 +1,6 @@
 cls
-vlog fifo_segment.v
-vlog fifo_image_input.v
-vlog fifo_seg_tb.v
-vsim -batch -voptargs=+acc work.fifo_seg_tb -do "run -all; quit" 
-::python convertor.py
+vlog module/hs_segment.v
+vlog test/tb_hs.v
+vsim -batch -voptargs=+acc work.tb_hs -do "run -all; quit" 
+python python/convertor.py
 cmd /k

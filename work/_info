@@ -78,6 +78,11 @@ R0
 R0
 R0
 R0
+R0
+R0
+R0
+R0
+R0
 !s11f MIXED_VERSIONS
 13
 !s112 1.1
@@ -96,11 +101,12 @@ Z3 o-quiet -auto_acc_if_foreign -work work +acc
 Z4 tCvgOpt 0
 n@_opt
 Z5 OL;O;2021.1;73
+R1
 T_opt1
-!s110 1740683754
-V==C[;=2NKY@Ym^8<MiND_1
-04 8 4 work adder_tb fast 0
-=1-9c5a446b5ec6-67c0b9e9-2f3-2130
+!s110 1741982743
+VPcmmZn?FZB:6^IEY:KoNK2
+04 5 4 work tb_hs fast 0
+=1-9c5a446b5ec6-67d48c17-1df-4b4c
 R2
 R3
 R4
@@ -361,6 +367,28 @@ R12
 R8
 R4
 nfixed_point_multiplier_27@x16
+vhs_segment
+Z18 !s110 1741982776
+!i10b 1
+!s100 oI;`TU4I@YPz_Pbl[=k?W2
+I0EWbVf6>ASZ0j14mXZeJZ2
+R1
+w1741982342
+8module/hs_segment.v
+Fmodule/hs_segment.v
+!i122 249
+L0 1 74
+R6
+R7
+r1
+!s85 0
+31
+Z19 !s108 1741982776.000000
+!s107 module/hs_segment.v|
+!s90 module/hs_segment.v|
+!i113 0
+R8
+R4
 vrelu_segment
 R9
 !i10b 1
@@ -380,6 +408,28 @@ r1
 R10
 R11
 R12
+!i113 0
+R8
+R4
+vtb_hs
+R18
+!i10b 1
+!s100 [2>9zJOgjQ2;DRbSLbn4J2
+I31Ya6?[_a1_m;<PE6DG0Q0
+R1
+w1741982730
+8test/tb_hs.v
+Ftest/tb_hs.v
+!i122 250
+L0 1 44
+R6
+R7
+r1
+!s85 0
+31
+R19
+!s107 test/tb_hs.v|
+!s90 test/tb_hs.v|
 !i113 0
 R8
 R4
