@@ -17,7 +17,7 @@ def fixed_point_7bit_twos_complement(binary_str):
             integer_value -= (1 << num_bits)
 
         # Convert to fixed-point decimal with 7 fractional bits
-        decimal_value = integer_value / (2 ** 28)
+        decimal_value = integer_value / (2 **9)
 
         return decimal_value
 
