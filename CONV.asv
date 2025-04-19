@@ -15,8 +15,7 @@ meanR = mean(mean(X_in(:,:,1))) % Red channel
 meanG = mean(mean(X_in(:,:,2))) % Green channel
 meanB = mean(mean(X_in(:,:,3))) % Blue channel
 X_in(:,:,1)=X_in(:,:,1)-meanR;
-X_in(:,:,2)=X_in(:,:,2)-meanG;
-X_in(:,:,3)=X_in(:,:,3)-meanB;
+
 X_in=double(padding(X_in,pad));
 [row,col,c]=size(X_in);
 

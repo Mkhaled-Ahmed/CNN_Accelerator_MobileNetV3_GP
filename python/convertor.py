@@ -31,7 +31,7 @@ def fixed_point_7bit_twos_complement(binary_str):
 
 # Read binary input from output.txt
 try:
-    with open("textfiles\\output.txt", "r") as file:
+    with open("textfiles\\output1.txt", "r") as file:
         binary_inputs = file.readlines()
     
     # Process each binary number in the file
