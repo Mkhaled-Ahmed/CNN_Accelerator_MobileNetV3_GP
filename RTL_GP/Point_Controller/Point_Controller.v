@@ -26,6 +26,7 @@ module Point_Controller #()
     //! output of weight address of data
     output [13:0] write_data_address,//* max is (112*112)=12544
     output data_write_en,
+	output reg Multplication_EN,
     output Point_End
 
 
@@ -311,4 +312,17 @@ assign data_write_en=activation_function_enable; //* will be high when Point_ena
  assign Point_End=(filter_number_flag && window_size_flag); 
  assign weights_read_en=Point_Enabel || start_op; //* will be high when Point_enable and zero when Point end
  assign data_read_en=Point_Enabel || start_op; //* will be high when Point_enable and zero when Point end
+ 
+ 
+ always @(posedge clk or negedge rst)
+    begin
+        if(!rst)
+            begin
+                Multplication_EN<='b0;
+            end
+        else 
+            begin
+                Multplication_EN<=start_op;
+            end
+    end
 endmodule
