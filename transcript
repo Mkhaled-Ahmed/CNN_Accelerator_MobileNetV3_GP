@@ -12,35 +12,24 @@
 # //  is prohibited from disclosure under the Trade Secrets Act,
 # //  18 U.S.C. Section 1905.
 # //
-# vsim -voptargs="+acc" work.fifo_seg_tb 
-# Start time: 00:52:33 on Mar 05,2025
-# ** Note: (vsim-8009) Loading existing optimized design _opt
-# Loading work.fifo_seg_tb(fast)
+# vsim -voptargs="+acc" work.tb_conv2d -do "add wave *;run -all" 
+# Start time: 21:19:26 on Apr 19,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.tb_conv2d(fast)
+# Loading work.fifo_image_input(fast)
 # Loading work.fifo_segment(fast)
-add wave -position insertpoint  \
-sim:/fifo_seg_tb/bitsize \
-sim:/fifo_seg_tb/clk \
-sim:/fifo_seg_tb/rst \
-sim:/fifo_seg_tb/input_pixel \
-sim:/fifo_seg_tb/wr_en \
-sim:/fifo_seg_tb/data_valid \
-sim:/fifo_seg_tb/output_window \
-sim:/fifo_seg_tb/file_input \
-sim:/fifo_seg_tb/file_output \
-sim:/fifo_seg_tb/scan_file
-run
-# Causality operation skipped due to absence of debug database file
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Break key hit
-# Break key hit
-# Break key hit
-# Break key hit
-# Break key hit
-quir
-# invalid command name "quir"
-quit
-# End time: 00:55:39 on Mar 05,2025, Elapsed time: 0:03:06
+# Loading work.conv2d(fast)
+# Loading work.fixed_point_multiplier_27X16(fast)
+# Loading work.fixed_point_multiplier_27(fast)
+# Loading work.fixed_point_multiplier(fast)
+# Loading work.conv2d_adder_16(fast)
+# Loading work.adder_27(fast)
+# Loading work.hs_block(fast)
+# Loading work.hs_segment(fast)
+# add wave *
+# run -all
+# ** Note: $stop    : module/tb_conv2d.v(113)
+#    Time: 506390 ns  Iteration: 1  Instance: /tb_conv2d
+# Break in Module tb_conv2d at module/tb_conv2d.v line 113
+# End time: 21:29:37 on Apr 19,2025, Elapsed time: 0:10:11
 # Errors: 0, Warnings: 0

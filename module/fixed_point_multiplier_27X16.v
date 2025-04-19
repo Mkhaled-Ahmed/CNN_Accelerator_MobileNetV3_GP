@@ -10,7 +10,7 @@ module fixed_point_multiplier_27X16 (data_in,weights,rst,start_flag,clk,Mult_res
     input signed [bitsize*27-1:0] data_in;
     input signed [bitsize*27*16-1:0] weights;
     
-    output signed [bitsize*27*16-1:0] Mult_result; 
+    output signed [(bitsize*2-FRAC_BITS)*27*16-1:0] Mult_result; 
     output valid;
 
     wire [15:0]valid_temp; 
@@ -25,7 +25,7 @@ module fixed_point_multiplier_27X16 (data_in,weights,rst,start_flag,clk,Mult_res
                     ,.clk(clk)
                     ,.rst(rst)
                     ,.start_flag(start_flag)
-                    ,.Mul_result(Mult_result[i*27*bitsize + 27*bitsize-1:i*27*bitsize])
+                    ,.Mul_result(Mult_result[i*27*(bitsize*2-FRAC_BITS) + 27*(bitsize*2-FRAC_BITS)-1:i*27*(bitsize*2-FRAC_BITS)])
                     ,.valid(valid_temp[i])
                     );
         end

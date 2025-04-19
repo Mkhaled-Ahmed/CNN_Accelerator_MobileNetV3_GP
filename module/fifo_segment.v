@@ -51,15 +51,15 @@ module fifo_segment(clk,
     assign data_valid = (ptr==fifo_size-1)?1'b1:1'b0;
     generate
         if(window_size==3)begin
-            assign output_window [13: 0] = fifo[(image_size+2*padding)*2+2];
-            assign output_window [27:14] = fifo[(image_size+2*padding)*2+1];
-            assign output_window [41:28] = fifo[(image_size+2*padding)*2];
-            assign output_window [55:42] = fifo[image_size+2*padding+2];
-            assign output_window [69:56] = fifo[image_size+2*padding+1];
-            assign output_window [83:70] = fifo[image_size+2*padding];
-            assign output_window [97:84] = fifo[2];
-            assign output_window [111:98] = fifo[1];
-            assign output_window [125:112] = fifo[0];
+            assign output_window [bitsize-1:0] = fifo[(image_size+2*padding)*2+2];
+            assign output_window [bitsize*2-1:bitsize] = fifo[(image_size+2*padding)*2+1];
+            assign output_window [bitsize*3-1:bitsize*2] = fifo[(image_size+2*padding)*2];
+            assign output_window [bitsize*4-1:bitsize*3] = fifo[image_size+2*padding+2];
+            assign output_window [bitsize*5-1:bitsize*4] = fifo[image_size+2*padding+1];
+            assign output_window [bitsize*6-1:bitsize*5] = fifo[image_size+2*padding];
+            assign output_window [bitsize*7-1:bitsize*6] = fifo[2];
+            assign output_window [bitsize*8-1:bitsize*7] = fifo[1];
+            assign output_window [bitsize*9-1:bitsize*8] = fifo[0];
         end
         // else if(window_size==5)begin
         //     assign output_window[0] = fifo[0];

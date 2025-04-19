@@ -2,16 +2,16 @@ module hs_segment(input_data,clk,rst,en,output_data,valid);
     //?Hardswitch segment
     parameter DATA_WIDTH = 26;
     parameter FRAC_BITS = 7;
-    localparam BIT_SIZE =14;
+    parameter OUT_SIZE =14;
     //localparam num3 = 3 * 2**FRAC_BITS;
     input signed [DATA_WIDTH-1:0] input_data;
     input clk,rst,en;
-    output signed [BIT_SIZE-1:0] output_data;
+    output signed [OUT_SIZE-1:0] output_data;
     output valid;
 
     //?Register
     reg valid_temp;
-    reg signed [BIT_SIZE-1:0] output_data_temp;
+    reg signed [OUT_SIZE-1:0] output_data_temp;
     reg signed [DATA_WIDTH+1-1:0] stage1_out;
 
     reg signed [(DATA_WIDTH+1)*2-1:0] stage2_out;
@@ -23,7 +23,6 @@ module hs_segment(input_data,clk,rst,en,output_data,valid);
     reg signed [DATA_WIDTH-1:0] stage4_out;
     reg signed [DATA_WIDTH-1:0] stage4_in;
 
-    reg signed [DATA_WIDTH-1:0] stage5_out;
     reg signed [DATA_WIDTH-1:0] stage5_in;
 
     reg stage2_en,stage3_en,stage4_en,stage5_en;
@@ -51,7 +50,7 @@ module hs_segment(input_data,clk,rst,en,output_data,valid);
             stage3_en <= 0;
         end
         else if(stage2_en) begin
-            stage2_out <= stage1_out * 26'd85;//* 1/6 9 fracrion bit
+            stage2_out <= stage1_out * 27'd85;//* 1/6 9 fracrion bit
             //stage2_out <= stage1_out * 26'd43690;//* 1/6 18 fracrion bit
             stage3_in <= stage2_in;
             stage3_en <= 1;
@@ -87,11 +86,11 @@ module hs_segment(input_data,clk,rst,en,output_data,valid);
         else if(stage4_en) begin
             stage5_in <= stage4_in;
             stage5_en <= 1;
-            if(!round)begin//1
-                stage4_out <= stage3_out[FRAC_BITS*2+BIT_SIZE-1:FRAC_BITS*2];
+            if(!round)begin
+                stage4_out <= stage3_out[FRAC_BITS*2+OUT_SIZE-1:FRAC_BITS*2];
             end
-            else begin//0
-                stage4_out <= stage3_out[FRAC_BITS*2+BIT_SIZE-1:FRAC_BITS*2]+1'b1;
+            else begin
+                stage4_out <= stage3_out[FRAC_BITS*2+OUT_SIZE-1:FRAC_BITS*2]+1'b1;
             end
         end
         else stage5_en <= 0;
@@ -105,8 +104,8 @@ module hs_segment(input_data,clk,rst,en,output_data,valid);
         else if(stage5_en) begin
             // output_data_temp <= stage4_out;
             // valid_temp <= 1;
-            if($signed(stage5_in) >= $signed(26'd1536)) begin
-                output_data_temp <= stage5_in[BIT_SIZE-1:0];
+            if($signed(stage5_in) >= $signed(26'd1536)) begin//!! data is 26 bit and we put it in a 14 bit ???
+                output_data_temp <= stage5_in[OUT_SIZE-1:0];
                 valid_temp <= 1;
             end
             else if($signed(stage5_in) <= $signed(-26'd1536)) begin

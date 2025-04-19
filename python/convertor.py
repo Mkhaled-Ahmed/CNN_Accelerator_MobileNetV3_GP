@@ -19,6 +19,7 @@ def fixed_point_7bit_twos_complement(binary_str):
         # Convert to fixed-point decimal with 7 fractional bits
         decimal_value = integer_value / (2 **9)
 
+
         return decimal_value
 
     except Exception as e:

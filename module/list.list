@@ -1,0 +1,15 @@
+module/adder_tree.v
+module/conv2d_adder_16.v
+module/conv2d_relu_16.v
+module/fifo_segment.v
+module/fifo_image_input.v
+module/fixed_point_multiplier.v
+module/fixed_point_multiplier_27.v
+module/fixed_point_multiplier_27X16.v
+module/hs_segment.v
+module/hs_block.v
+module/mem_segment_bneck.v
+module/mem_bneck.v
+module/relu_segment.v
+module/conv2d.v
+module/tb_conv2d.v
