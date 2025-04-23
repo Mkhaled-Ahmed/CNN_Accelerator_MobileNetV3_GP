@@ -31,13 +31,14 @@ def fixed_point_7bit_twos_complement(binary_str):
 
 # Read binary input from output.txt
 try:
-    with open("textfiles\\output1.txt", "r") as file:
+    with open("textfiles\\output_flat.txt", "r") as file:
         binary_inputs = file.readlines()
     
     # Process each binary number in the file
-    for binary_input in binary_inputs:
-        binary_input = binary_input.strip()  # Remove any leading/trailing whitespace
-        decimal_output = fixed_point_7bit_twos_complement(binary_input)
-        print(f"Binary: {binary_input} -> Decimal: {decimal_output}")
+    with open("textfiles\\output_flat_decimal.txt", "w") as file:
+        for binary_input in binary_inputs:
+            binary_input = binary_input.strip()  # Remove any leading/trailing whitespace
+            decimal_output = fixed_point_7bit_twos_complement(binary_input)
+            file.write(f"{decimal_output}\n")  # Write each number on a new line
 except FileNotFoundError:
     print("Error: output.txt not found.")
