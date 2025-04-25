@@ -29,7 +29,7 @@ def fixed_point_7bit_twos_complement(binary_str):
     except Exception as e:
         return f"Error: {str(e)}"
 
-# Read binary input from output.txt
+
 try:
     with open("textfiles\\output_flat.txt", "r") as file:
         binary_inputs = file.readlines()
@@ -42,3 +42,4 @@ try:
             file.write(f"{decimal_output}\n")  # Write each number on a new line
 except FileNotFoundError:
     print("Error: output.txt not found.")
+# print(fixed_point_7bit_twos_complement("00000100011010"))

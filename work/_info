@@ -132,6 +132,27 @@ R0
 R0
 R0
 R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
 !s11f MIXED_VERSIONS
 13
 !s112 1.1
@@ -141,10 +162,10 @@ R0
 cModel Technology
 Z1 dE:/GP_RTL/CNN_Accelerator_MobileNetV3_GP
 T_opt
-!s110 1745090366
-VaFdd<7GK>07EjE^W;]8_I2
+!s110 1745540517
+V]cgj>_KLMb`;:J;Q1idg33
 Z2 04 9 4 work tb_conv2d fast 0
-=1-9c5a446b5ec6-6803f73e-147-2ec0
+=1-9c5a446b5ec6-680ad5a5-67-56cc
 Z3 !s124 OEM100
 Z4 o-quiet -auto_acc_if_foreign -work work +acc
 Z5 tCvgOpt 0
@@ -172,8 +193,19 @@ R5
 n@_opt2
 R6
 R1
+T_opt3
+!s110 1745540173
+V8[MB27dZdgKMEW^US:=1b0
+R2
+=1-9c5a446b5ec6-680ad44c-37f-628c
+R3
+R4
+R5
+n@_opt3
+R6
+R1
 vadder_27
-Z7 !s110 1745090346
+Z7 !s110 1745540510
 !i10b 1
 !s100 ?kb8Lj2TOK4W=;7?34HlZ2
 I7LPOAoc6Az2cePZ=^@6F03
@@ -181,14 +213,14 @@ R1
 w1742149663
 8module/adder_tree.v
 Fmodule/adder_tree.v
-!i122 391
+!i122 420
 L0 1 176
 Z8 VDg1SIo80bB@j0V0VzS_@n1
 Z9 OL;L;2021.1;73
 r1
 !s85 0
 31
-Z10 !s108 1745090346.000000
+Z10 !s108 1745540510.000000
 Z11 !s107 module/tb_conv2d.v|module/conv2d.v|module/relu_segment.v|module/mem_bneck.v|module/mem_segment_bneck.v|module/hs_block.v|module/hs_segment.v|module/fixed_point_multiplier_27X16.v|module/fixed_point_multiplier_27.v|module/fixed_point_multiplier.v|module/fifo_image_input.v|module/fifo_segment.v|module/conv2d_relu_16.v|module/conv2d_adder_16.v|module/adder_tree.v|
 Z12 !s90 -f|module/list.list|
 !i113 0
@@ -225,7 +257,7 @@ R1
 w1745074649
 8module/conv2d.v
 Fmodule/conv2d.v
-!i122 391
+!i122 420
 L0 1 79
 R8
 R9
@@ -247,7 +279,7 @@ R1
 w1742149581
 8module/conv2d_adder_16.v
 Fmodule/conv2d_adder_16.v
-!i122 391
+!i122 420
 L0 1 34
 R8
 R9
@@ -269,7 +301,7 @@ R1
 w1740340506
 8module/conv2d_relu_16.v
 Fmodule/conv2d_relu_16.v
-!i122 391
+!i122 420
 L0 1 28
 R8
 R9
@@ -291,7 +323,7 @@ R1
 w1741302743
 8module/fifo_image_input.v
 Fmodule/fifo_image_input.v
-!i122 391
+!i122 420
 L0 1 100
 R8
 R9
@@ -305,24 +337,24 @@ R12
 R13
 R5
 vfifo_seg_tb
-Z14 !s110 1742146240
+!s110 1745528002
 !i10b 1
-!s100 RMR218AJzF=n`baKc[7YO1
-IzQkbJe^1Cn?h5g@e`MgJn2
+!s100 [=hi6;4f;_YJfo^W60G4O1
+IJ6em@AkBHM=6?[Ki0:Gl;3
 R1
-w1741302788
-8module/fifo_seg_tb.v
-Fmodule/fifo_seg_tb.v
-!i122 332
-L0 1 88
+w1745527993
+8test/fifo_seg_tb.v
+Ftest/fifo_seg_tb.v
+!i122 407
+L0 1 89
 R8
 R9
 r1
 !s85 0
 31
-Z15 !s108 1742146240.000000
-Z16 !s107 module/relu_segment.v|module/multi_adder_parallel.v|module/mem_segment_bneck.v|module/mem_bneck.v|module/hs_segment.v|module/hs_block.v|module/fixed_point_multiplier_27X16.v|module/fixed_point_multiplier_27.v|module/fixed_point_multiplier.v|module/fifo_seg_tb.v|module/fifo_segment.v|module/fifo_image_input.v|module/conv2d_relu_16.v|module/conv2d_adder_16.v|module/conv2d.v|module/adder_tree.v|
-R12
+!s108 1745528002.000000
+!s107 test/fifo_seg_tb.v|
+!s90 test/fifo_seg_tb.v|
 !i113 0
 R13
 R5
@@ -335,7 +367,7 @@ R1
 w1745090327
 8module/fifo_segment.v
 Fmodule/fifo_segment.v
-!i122 391
+!i122 420
 L0 1 94
 R8
 R9
@@ -357,7 +389,7 @@ R1
 w1742067468
 8module/fixed_point_multiplier.v
 Fmodule/fixed_point_multiplier.v
-!i122 391
+!i122 420
 L0 1 63
 R8
 R9
@@ -379,8 +411,8 @@ R1
 w1742147494
 8module/fixed_point_multiplier_27.v
 Fmodule/fixed_point_multiplier_27.v
-!i122 391
-Z17 L0 1 35
+!i122 420
+Z14 L0 1 35
 R8
 R9
 r1
@@ -401,8 +433,8 @@ R1
 w1742166715
 8module/fixed_point_multiplier_27X16.v
 Fmodule/fixed_point_multiplier_27X16.v
-!i122 391
-R17
+!i122 420
+R14
 R8
 R9
 r1
@@ -424,7 +456,7 @@ R1
 w1742144789
 8module/hs_block.v
 Fmodule/hs_block.v
-!i122 391
+!i122 420
 L0 1 30
 R8
 R9
@@ -440,13 +472,13 @@ R5
 vhs_segment
 R7
 !i10b 1
-!s100 5TbJ_BV8NF^bFi6HdXVGE2
-IYe?h^l:[`Jo53j2ki_Yb>2
+!s100 4XH0cG5MTigfHlO;>^AWE2
+ICEjUdi=G@VVQ^N?KcCJ=63
 R1
-w1744907524
+w1745538848
 8module/hs_segment.v
 Fmodule/hs_segment.v
-!i122 391
+!i122 420
 L0 1 130
 R8
 R9
@@ -468,7 +500,7 @@ R1
 w1739830132
 8module/mem_bneck.v
 Fmodule/mem_bneck.v
-!i122 391
+!i122 420
 L0 1 17
 R8
 R9
@@ -490,7 +522,7 @@ R1
 w1739916891
 8module/mem_segment_bneck.v
 Fmodule/mem_segment_bneck.v
-!i122 391
+!i122 420
 L0 1 33
 R8
 R9
@@ -504,7 +536,7 @@ R12
 R13
 R5
 vmulti_adder_parallel
-R14
+!s110 1742146240
 !i10b 1
 !s100 c]L6zLlCc=`TH@98QlFnF2
 I=TkHCPWEjdW<T5lB9k2gU0
@@ -519,8 +551,8 @@ R9
 r1
 !s85 0
 31
-R15
-R16
+!s108 1742146240.000000
+!s107 module/relu_segment.v|module/multi_adder_parallel.v|module/mem_segment_bneck.v|module/mem_bneck.v|module/hs_segment.v|module/hs_block.v|module/fixed_point_multiplier_27X16.v|module/fixed_point_multiplier_27.v|module/fixed_point_multiplier.v|module/fifo_seg_tb.v|module/fifo_segment.v|module/fifo_image_input.v|module/conv2d_relu_16.v|module/conv2d_adder_16.v|module/conv2d.v|module/adder_tree.v|
 R12
 !i113 0
 R13
@@ -534,7 +566,7 @@ R1
 w1740341817
 8module/relu_segment.v
 Fmodule/relu_segment.v
-!i122 391
+!i122 420
 L0 1 43
 R8
 R9
@@ -550,14 +582,14 @@ R5
 vtb_conv2d
 R7
 !i10b 1
-!s100 j3W2ThVDJN9P2^:9:2^2A0
-Ih`VBM4izF>PmffcagZV>31
+!s100 V;2kNzzdnz5I@g3nA7o3b0
+IM931eD8;iaki`d=f3ePOA3
 R1
-w1745089730
-Z18 8module/tb_conv2d.v
-Z19 Fmodule/tb_conv2d.v
-!i122 391
-L0 1 117
+w1745540457
+Z15 8module/tb_conv2d.v
+Z16 Fmodule/tb_conv2d.v
+!i122 420
+L0 1 163
 R8
 R9
 r1
@@ -576,8 +608,8 @@ vtb_cov2d
 II0zi8f27ch]05fPkA2j7c1
 R1
 w1745089104
-R18
-R19
+R15
+R16
 !i122 384
 L0 1 116
 R8

@@ -12,9 +12,9 @@
 # //  is prohibited from disclosure under the Trade Secrets Act,
 # //  18 U.S.C. Section 1905.
 # //
-# vsim -voptargs="+acc" work.tb_conv2d -do "add wave *;run -all" 
-# Start time: 21:19:26 on Apr 19,2025
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# vsim -voptargs="+acc" work.tb_conv2d 
+# Start time: 01:13:33 on Apr 25,2025
+# ** Note: (vsim-8009) Loading existing optimized design _opt3
 # Loading work.tb_conv2d(fast)
 # Loading work.fifo_image_input(fast)
 # Loading work.fifo_segment(fast)
@@ -26,10 +26,225 @@
 # Loading work.adder_27(fast)
 # Loading work.hs_block(fast)
 # Loading work.hs_segment(fast)
-# add wave *
-# run -all
-# ** Note: $stop    : module/tb_conv2d.v(113)
+add wave -position insertpoint  \
+{sim:/tb_conv2d/u_conv2d/fixed_point_multiplier_27X16_inst/genblk1[0]/fixed_point_multiplier_27_inst/genblk1[0]/fixed_point_multiplier_inst/a} \
+{sim:/tb_conv2d/u_conv2d/fixed_point_multiplier_27X16_inst/genblk1[0]/fixed_point_multiplier_27_inst/genblk1[0]/fixed_point_multiplier_inst/b} \
+{sim:/tb_conv2d/u_conv2d/fixed_point_multiplier_27X16_inst/genblk1[0]/fixed_point_multiplier_27_inst/genblk1[0]/fixed_point_multiplier_inst/Mul_result}
+add wave -position insertpoint  \
+{sim:/tb_conv2d/u_conv2d/fixed_point_multiplier_27X16_inst/genblk1[0]/fixed_point_multiplier_27_inst/genblk1[1]/fixed_point_multiplier_inst/a} \
+{sim:/tb_conv2d/u_conv2d/fixed_point_multiplier_27X16_inst/genblk1[0]/fixed_point_multiplier_27_inst/genblk1[1]/fixed_point_multiplier_inst/b} \
+{sim:/tb_conv2d/u_conv2d/fixed_point_multiplier_27X16_inst/genblk1[0]/fixed_point_multiplier_27_inst/genblk1[1]/fixed_point_multiplier_inst/Mul_result}
+add wave -position insertpoint  \
+{sim:/tb_conv2d/u_conv2d/fixed_point_multiplier_27X16_inst/genblk1[0]/fixed_point_multiplier_27_inst/genblk1[2]/fixed_point_multiplier_inst/a} \
+{sim:/tb_conv2d/u_conv2d/fixed_point_multiplier_27X16_inst/genblk1[0]/fixed_point_multiplier_27_inst/genblk1[2]/fixed_point_multiplier_inst/b} \
+{sim:/tb_conv2d/u_conv2d/fixed_point_multiplier_27X16_inst/genblk1[0]/fixed_point_multiplier_27_inst/genblk1[2]/fixed_point_multiplier_inst/Mul_result}
+add wave -position insertpoint  \
+{sim:/tb_conv2d/u_conv2d/fixed_point_multiplier_27X16_inst/genblk1[0]/fixed_point_multiplier_27_inst/genblk1[3]/fixed_point_multiplier_inst/a} \
+{sim:/tb_conv2d/u_conv2d/fixed_point_multiplier_27X16_inst/genblk1[0]/fixed_point_multiplier_27_inst/genblk1[3]/fixed_point_multiplier_inst/b} \
+{sim:/tb_conv2d/u_conv2d/fixed_point_multiplier_27X16_inst/genblk1[0]/fixed_point_multiplier_27_inst/genblk1[3]/fixed_point_multiplier_inst/Mul_result}
+add wave -position insertpoint  \
+{sim:/tb_conv2d/u_conv2d/fixed_point_multiplier_27X16_inst/genblk1[0]/fixed_point_multiplier_27_inst/genblk1[4]/fixed_point_multiplier_inst/a} \
+{sim:/tb_conv2d/u_conv2d/fixed_point_multiplier_27X16_inst/genblk1[0]/fixed_point_multiplier_27_inst/genblk1[4]/fixed_point_multiplier_inst/b} \
+{sim:/tb_conv2d/u_conv2d/fixed_point_multiplier_27X16_inst/genblk1[0]/fixed_point_multiplier_27_inst/genblk1[4]/fixed_point_multiplier_inst/Mul_result}
+add wave -position insertpoint  \
+{sim:/tb_conv2d/u_conv2d/fixed_point_multiplier_27X16_inst/genblk1[0]/fixed_point_multiplier_27_inst/genblk1[5]/fixed_point_multiplier_inst/a} \
+{sim:/tb_conv2d/u_conv2d/fixed_point_multiplier_27X16_inst/genblk1[0]/fixed_point_multiplier_27_inst/genblk1[5]/fixed_point_multiplier_inst/b} \
+{sim:/tb_conv2d/u_conv2d/fixed_point_multiplier_27X16_inst/genblk1[0]/fixed_point_multiplier_27_inst/genblk1[5]/fixed_point_multiplier_inst/Mul_result}
+add wave -position insertpoint  \
+{sim:/tb_conv2d/u_conv2d/fixed_point_multiplier_27X16_inst/genblk1[0]/fixed_point_multiplier_27_inst/genblk1[6]/fixed_point_multiplier_inst/a} \
+{sim:/tb_conv2d/u_conv2d/fixed_point_multiplier_27X16_inst/genblk1[0]/fixed_point_multiplier_27_inst/genblk1[6]/fixed_point_multiplier_inst/b} \
+{sim:/tb_conv2d/u_conv2d/fixed_point_multiplier_27X16_inst/genblk1[0]/fixed_point_multiplier_27_inst/genblk1[6]/fixed_point_multiplier_inst/Mul_result}
+add wave -position insertpoint  \
+{sim:/tb_conv2d/u_conv2d/fixed_point_multiplier_27X16_inst/genblk1[0]/fixed_point_multiplier_27_inst/genblk1[7]/fixed_point_multiplier_inst/a} \
+{sim:/tb_conv2d/u_conv2d/fixed_point_multiplier_27X16_inst/genblk1[0]/fixed_point_multiplier_27_inst/genblk1[7]/fixed_point_multiplier_inst/b} \
+{sim:/tb_conv2d/u_conv2d/fixed_point_multiplier_27X16_inst/genblk1[0]/fixed_point_multiplier_27_inst/genblk1[7]/fixed_point_multiplier_inst/Mul_result}
+add wave -position insertpoint  \
+{sim:/tb_conv2d/u_conv2d/fixed_point_multiplier_27X16_inst/genblk1[0]/fixed_point_multiplier_27_inst/genblk1[8]/fixed_point_multiplier_inst/a} \
+{sim:/tb_conv2d/u_conv2d/fixed_point_multiplier_27X16_inst/genblk1[0]/fixed_point_multiplier_27_inst/genblk1[8]/fixed_point_multiplier_inst/b} \
+{sim:/tb_conv2d/u_conv2d/fixed_point_multiplier_27X16_inst/genblk1[0]/fixed_point_multiplier_27_inst/genblk1[8]/fixed_point_multiplier_inst/Mul_result}
+add wave -position insertpoint  \
+{sim:/tb_conv2d/u_conv2d/fixed_point_multiplier_27X16_inst/genblk1[0]/fixed_point_multiplier_27_inst/genblk1[9]/fixed_point_multiplier_inst/a} \
+{sim:/tb_conv2d/u_conv2d/fixed_point_multiplier_27X16_inst/genblk1[0]/fixed_point_multiplier_27_inst/genblk1[9]/fixed_point_multiplier_inst/b} \
+{sim:/tb_conv2d/u_conv2d/fixed_point_multiplier_27X16_inst/genblk1[0]/fixed_point_multiplier_27_inst/genblk1[9]/fixed_point_multiplier_inst/Mul_result}
+run -all
+# ** Note: $stop    : module/tb_conv2d.v(154)
 #    Time: 506390 ns  Iteration: 1  Instance: /tb_conv2d
-# Break in Module tb_conv2d at module/tb_conv2d.v line 113
-# End time: 21:29:37 on Apr 19,2025, Elapsed time: 0:10:11
+# Break in Module tb_conv2d at module/tb_conv2d.v line 154
+add wave -position insertpoint  \
+sim:/tb_conv2d/u_fifo_image_input/u_fifo_segmentR/output_window
+add wave -position insertpoint  \
+sim:/tb_conv2d/u_fifo_image_input/u_fifo_segmentR/fifo
+add wave -position insertpoint  \
+{sim:/tb_conv2d/u_fifo_image_input/u_fifo_segmentR/fifo[0]}
+add wave -position insertpoint  \
+{sim:/tb_conv2d/u_fifo_image_input/u_fifo_segmentR/fifo[1]}
+add wave -position insertpoint  \
+{sim:/tb_conv2d/u_fifo_image_input/u_fifo_segmentR/fifo[2]}
+add wave -position insertpoint  \
+{sim:/tb_conv2d/u_fifo_image_input/u_fifo_segmentR/fifo[226]}
+add wave -position insertpoint  \
+{sim:/tb_conv2d/u_fifo_image_input/u_fifo_segmentR/fifo[227]}
+add wave -position insertpoint  \
+{sim:/tb_conv2d/u_fifo_image_input/u_fifo_segmentR/fifo[228]}
+add wave -position insertpoint  \
+{sim:/tb_conv2d/u_fifo_image_input/u_fifo_segmentR/fifo[452]}
+add wave -position insertpoint  \
+{sim:/tb_conv2d/u_fifo_image_input/u_fifo_segmentR/fifo[453]}
+add wave -position insertpoint  \
+{sim:/tb_conv2d/u_fifo_image_input/u_fifo_segmentR/fifo[454]}
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt3
+# Loading work.tb_conv2d(fast)
+# Loading work.fifo_image_input(fast)
+# Loading work.fifo_segment(fast)
+# Loading work.conv2d(fast)
+# Loading work.fixed_point_multiplier_27X16(fast)
+# Loading work.fixed_point_multiplier_27(fast)
+# Loading work.fixed_point_multiplier(fast)
+# Loading work.conv2d_adder_16(fast)
+# Loading work.adder_27(fast)
+# Loading work.hs_block(fast)
+# Loading work.hs_segment(fast)
+run -all
+# ** Note: $stop    : module/tb_conv2d.v(154)
+#    Time: 506390 ns  Iteration: 1  Instance: /tb_conv2d
+# Break in Module tb_conv2d at module/tb_conv2d.v line 154
+add wave -position insertpoint  \
+sim:/tb_conv2d/u_fifo_image_input/u_fifo_segmentR/ptr
+add wave -position insertpoint  \
+sim:/tb_conv2d/u_fifo_image_input/u_fifo_segmentR/data_valid
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt3
+# Loading work.tb_conv2d(fast)
+# Loading work.fifo_image_input(fast)
+# Loading work.fifo_segment(fast)
+# Loading work.conv2d(fast)
+# Loading work.fixed_point_multiplier_27X16(fast)
+# Loading work.fixed_point_multiplier_27(fast)
+# Loading work.fixed_point_multiplier(fast)
+# Loading work.conv2d_adder_16(fast)
+# Loading work.adder_27(fast)
+# Loading work.hs_block(fast)
+# Loading work.hs_segment(fast)
+run -all
+# ** Note: $stop    : module/tb_conv2d.v(154)
+#    Time: 506390 ns  Iteration: 1  Instance: /tb_conv2d
+# Break in Module tb_conv2d at module/tb_conv2d.v line 154
+add wave -position insertpoint  \
+sim:/tb_conv2d/data_valid
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt3
+# Loading work.tb_conv2d(fast)
+# Loading work.fifo_image_input(fast)
+# Loading work.fifo_segment(fast)
+# Loading work.conv2d(fast)
+# Loading work.fixed_point_multiplier_27X16(fast)
+# Loading work.fixed_point_multiplier_27(fast)
+# Loading work.fixed_point_multiplier(fast)
+# Loading work.conv2d_adder_16(fast)
+# Loading work.adder_27(fast)
+# Loading work.hs_block(fast)
+# Loading work.hs_segment(fast)
+run -all
+# ** Note: $stop    : module/tb_conv2d.v(154)
+#    Time: 506390 ns  Iteration: 1  Instance: /tb_conv2d
+# Break in Module tb_conv2d at module/tb_conv2d.v line 154
+add wave -position insertpoint  \
+sim:/tb_conv2d/u_conv2d/start_flag
+add wave -position insertpoint  \
+{sim:/tb_conv2d/u_conv2d/conv2d_adder_16_inst/genblk1[0]/adder_27_inst/start_adder}
+add wave -position insertpoint  \
+{sim:/tb_conv2d/u_conv2d/conv2d_adder_16_inst/genblk1[0]/adder_27_inst/sum_output}
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt3
+# Loading work.tb_conv2d(fast)
+# Loading work.fifo_image_input(fast)
+# Loading work.fifo_segment(fast)
+# Loading work.conv2d(fast)
+# Loading work.fixed_point_multiplier_27X16(fast)
+# Loading work.fixed_point_multiplier_27(fast)
+# Loading work.fixed_point_multiplier(fast)
+# Loading work.conv2d_adder_16(fast)
+# Loading work.adder_27(fast)
+# Loading work.hs_block(fast)
+# Loading work.hs_segment(fast)
+run -all
+# ** Note: $stop    : module/tb_conv2d.v(154)
+#    Time: 506390 ns  Iteration: 1  Instance: /tb_conv2d
+# Break in Module tb_conv2d at module/tb_conv2d.v line 154
+add wave -position insertpoint  \
+{sim:/tb_conv2d/u_conv2d/conv2d_adder_16_inst/genblk1[0]/adder_27_inst/data_valid}
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt3
+# Loading work.tb_conv2d(fast)
+# Loading work.fifo_image_input(fast)
+# Loading work.fifo_segment(fast)
+# Loading work.conv2d(fast)
+# Loading work.fixed_point_multiplier_27X16(fast)
+# Loading work.fixed_point_multiplier_27(fast)
+# Loading work.fixed_point_multiplier(fast)
+# Loading work.conv2d_adder_16(fast)
+# Loading work.adder_27(fast)
+# Loading work.hs_block(fast)
+# Loading work.hs_segment(fast)
+run
+# Causality operation skipped due to absence of debug database file
+run -all
+# ** Note: $stop    : module/tb_conv2d.v(154)
+#    Time: 506390 ns  Iteration: 1  Instance: /tb_conv2d
+# Break in Module tb_conv2d at module/tb_conv2d.v line 154
+add wave -position insertpoint  \
+{sim:/tb_conv2d/u_conv2d/hs_block_inst/hs_segment[0]/u_hs_segment/output_data}
+add wave -position insertpoint  \
+{sim:/tb_conv2d/u_conv2d/hs_block_inst/hs_segment[0]/u_hs_segment/valid}
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt3
+# Loading work.tb_conv2d(fast)
+# Loading work.fifo_image_input(fast)
+# Loading work.fifo_segment(fast)
+# Loading work.conv2d(fast)
+# Loading work.fixed_point_multiplier_27X16(fast)
+# Loading work.fixed_point_multiplier_27(fast)
+# Loading work.fixed_point_multiplier(fast)
+# Loading work.conv2d_adder_16(fast)
+# Loading work.adder_27(fast)
+# Loading work.hs_block(fast)
+# Loading work.hs_segment(fast)
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt3
+# Loading work.tb_conv2d(fast)
+# Loading work.fifo_image_input(fast)
+# Loading work.fifo_segment(fast)
+# Loading work.conv2d(fast)
+# Loading work.fixed_point_multiplier_27X16(fast)
+# Loading work.fixed_point_multiplier_27(fast)
+# Loading work.fixed_point_multiplier(fast)
+# Loading work.conv2d_adder_16(fast)
+# Loading work.adder_27(fast)
+# Loading work.hs_block(fast)
+# Loading work.hs_segment(fast)
+run -all
+# ** Note: $stop    : module/tb_conv2d.v(154)
+#    Time: 506390 ns  Iteration: 1  Instance: /tb_conv2d
+# Break in Module tb_conv2d at module/tb_conv2d.v line 154
+add wave -position insertpoint  \
+sim:/tb_conv2d/u_conv2d/hs_block_inst/output_data
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt3
+# Loading work.tb_conv2d(fast)
+# Loading work.fifo_image_input(fast)
+# Loading work.fifo_segment(fast)
+# Loading work.conv2d(fast)
+# Loading work.fixed_point_multiplier_27X16(fast)
+# Loading work.fixed_point_multiplier_27(fast)
+# Loading work.fixed_point_multiplier(fast)
+# Loading work.conv2d_adder_16(fast)
+# Loading work.adder_27(fast)
+# Loading work.hs_block(fast)
+# Loading work.hs_segment(fast)
+run -all
+# ** Note: $stop    : module/tb_conv2d.v(154)
+#    Time: 506390 ns  Iteration: 1  Instance: /tb_conv2d
+# Break in Module tb_conv2d at module/tb_conv2d.v line 154
+# End time: 03:11:35 on Apr 25,2025, Elapsed time: 1:58:02
 # Errors: 0, Warnings: 0

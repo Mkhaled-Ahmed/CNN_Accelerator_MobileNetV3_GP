@@ -1,33 +1,49 @@
 module tb_hs ();
 
 
-    parameter DATA_WIDTH = 26;
+    parameter DATA_WIDTH = 32;
     parameter FRAC_BITS=9;
-    parameter OUT_SIZE=14;
-    reg signed [DATA_WIDTH*16-1:0] input_data;
-    reg signed [DATA_WIDTH*16-1:0] input_data_temp;
+    parameter OUT_SIZE=18;
+    reg signed [DATA_WIDTH-1:0] input_data;
+    reg signed [DATA_WIDTH-1:0] input_data_temp;
     reg clk,rst,en;
-    wire signed [OUT_SIZE*16-1:0] output_data;
+    wire signed [OUT_SIZE-1:0] output_data;
     wire valid;
     reg start=0;
     integer file;
     reg [25:0]i;
 
+// output declaration of module hs_segment
+// wire [OUT_SIZE-1:0] output_data;
+// wire valid;
+
+hs_segment #(
+    .DATA_WIDTH 	(32  ),
+    .FRAC_BITS  	(9  ),
+    .OUT_SIZE   	(18  ))
+u_hs_segment(
+    .input_data  	(input_data   ),
+    .clk         	(clk          ),
+    .rst         	(rst          ),
+    .en          	(en           ),
+    .output_data 	(output_data  ),
+    .valid       	(valid        )
+);
 
 
-    hs_block #(
-        .DATA_WIDTH 	(DATA_WIDTH  ),
-        .FRAC_BITS  	(FRAC_BITS   ),
-        .OUT_SIZE   	(OUT_SIZE    )
-        )
-    u_hs_segment(
-        .input_data  	(input_data   ),
-        .clk         	(clk          ),
-        .rst         	(rst          ),
-        .en          	(en           ),
-        .output_data 	(output_data  ),
-        .valid       	(valid        )
-    );
+    // hs_block #(
+    //     .DATA_WIDTH 	(DATA_WIDTH  ),
+    //     .FRAC_BITS  	(FRAC_BITS   ),
+    //     .OUT_SIZE   	(OUT_SIZE    )
+    //     )
+    // u_hs_segment(
+    //     .input_data  	(input_data   ),
+    //     .clk         	(clk          ),
+    //     .rst         	(rst          ),
+    //     .en          	(en           ),
+    //     .output_data 	(output_data  ),
+    //     .valid       	(valid        )
+    // );
 
     initial begin
         clk = 0;

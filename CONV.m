@@ -10,14 +10,19 @@ stride=2;
 
 
 
-X_in=imread(photo);
+X_in=double(imread(photo));
+whos X_in
+data=(X_in(1:3,1:3,:))
 meanR = mean(mean(X_in(:,:,1))) % Red channel
 meanG = mean(mean(X_in(:,:,2))) % Green channel
 meanB = mean(mean(X_in(:,:,3))) % Blue channel
-X_in(:,:,1)=X_in(:,:,1)-meanR;
-X_in(:,:,2)=X_in(:,:,2)-meanG;
-X_in(:,:,3)=X_in(:,:,3)-meanB;
+X_in(:,:,1)=double(X_in(:,:,1)-meanR);
+data=(X_in(:,:,1));
+X_in(:,:,2)=double(X_in(:,:,2)-meanG);
+X_in(:,:,3)=double(X_in(:,:,3)-meanB);
+data=(X_in(1:3,1:3,:))
 X_in=double(padding(X_in,pad));
+data=(X_in(1:3,1:3,:))
 [row,col,c]=size(X_in);
 
 
