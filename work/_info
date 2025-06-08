@@ -171,6 +171,7 @@ Z4 o-quiet -auto_acc_if_foreign -work work +acc
 Z5 tCvgOpt 0
 n@_opt
 Z6 OL;O;2021.1;73
+R1
 T_opt1
 !s110 1745089356
 VQ9IMLaO2MCXdA[haHT;Dh3
@@ -214,17 +215,17 @@ w1742149663
 8module/adder_tree.v
 Fmodule/adder_tree.v
 !i122 420
-L0 1 176
-Z8 VDg1SIo80bB@j0V0VzS_@n1
-Z9 OL;L;2021.1;73
+Z8 L0 1 176
+Z9 VDg1SIo80bB@j0V0VzS_@n1
+Z10 OL;L;2021.1;73
 r1
 !s85 0
 31
-Z10 !s108 1745540510.000000
-Z11 !s107 module/tb_conv2d.v|module/conv2d.v|module/relu_segment.v|module/mem_bneck.v|module/mem_segment_bneck.v|module/hs_block.v|module/hs_segment.v|module/fixed_point_multiplier_27X16.v|module/fixed_point_multiplier_27.v|module/fixed_point_multiplier.v|module/fifo_image_input.v|module/fifo_segment.v|module/conv2d_relu_16.v|module/conv2d_adder_16.v|module/adder_tree.v|
-Z12 !s90 -f|module/list.list|
+Z11 !s108 1745540510.000000
+Z12 !s107 module/tb_conv2d.v|module/conv2d.v|module/relu_segment.v|module/mem_bneck.v|module/mem_segment_bneck.v|module/hs_block.v|module/hs_segment.v|module/fixed_point_multiplier_27X16.v|module/fixed_point_multiplier_27.v|module/fixed_point_multiplier.v|module/fifo_image_input.v|module/fifo_segment.v|module/conv2d_relu_16.v|module/conv2d_adder_16.v|module/adder_tree.v|
+Z13 !s90 -f|module/list.list|
 !i113 0
-Z13 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z14 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 R5
 vadder_tb
 !s110 1740683746
@@ -237,8 +238,8 @@ w1740683738
 Ftb.v
 !i122 80
 L0 1 53
-R8
 R9
+R10
 r1
 !s85 0
 31
@@ -246,7 +247,7 @@ r1
 !s107 tb.v|
 !s90 tb.v|
 !i113 0
-R13
+R14
 R5
 vconv2d
 R7
@@ -259,16 +260,16 @@ w1745074649
 Fmodule/conv2d.v
 !i122 420
 L0 1 79
-R8
 R9
+R10
 r1
 !s85 0
 31
-R10
 R11
 R12
-!i113 0
 R13
+!i113 0
+R14
 R5
 vconv2d_adder_16
 R7
@@ -281,16 +282,16 @@ w1742149581
 Fmodule/conv2d_adder_16.v
 !i122 420
 L0 1 34
-R8
 R9
+R10
 r1
 !s85 0
 31
-R10
 R11
 R12
-!i113 0
 R13
+!i113 0
+R14
 R5
 vconv2d_relu_16
 R7
@@ -303,16 +304,38 @@ w1740340506
 Fmodule/conv2d_relu_16.v
 !i122 420
 L0 1 28
-R8
 R9
+R10
 r1
 !s85 0
 31
-R10
 R11
 R12
-!i113 0
 R13
+!i113 0
+R14
+R5
+vfifo_3x3
+!s110 1749368718
+!i10b 1
+!s100 ABeM0LlIc^nFabM]XloL:2
+IX_Mgi68Q@^oB6PbTE^BYa1
+R1
+w1749368715
+8module/fifo/fifo3x3.v
+Fmodule/fifo/fifo3x3.v
+!i122 421
+R8
+R9
+R10
+r1
+!s85 0
+31
+!s108 1749368718.000000
+!s107 module/fifo/fifo3x3.v|
+!s90 module/fifo/fifo3x3.v|
+!i113 0
+R14
 R5
 vfifo_image_input
 R7
@@ -325,16 +348,16 @@ w1741302743
 Fmodule/fifo_image_input.v
 !i122 420
 L0 1 100
-R8
 R9
+R10
 r1
 !s85 0
 31
-R10
 R11
 R12
-!i113 0
 R13
+!i113 0
+R14
 R5
 vfifo_seg_tb
 !s110 1745528002
@@ -347,8 +370,8 @@ w1745527993
 Ftest/fifo_seg_tb.v
 !i122 407
 L0 1 89
-R8
 R9
+R10
 r1
 !s85 0
 31
@@ -356,7 +379,7 @@ r1
 !s107 test/fifo_seg_tb.v|
 !s90 test/fifo_seg_tb.v|
 !i113 0
-R13
+R14
 R5
 vfifo_segment
 R7
@@ -369,16 +392,16 @@ w1745090327
 Fmodule/fifo_segment.v
 !i122 420
 L0 1 94
-R8
 R9
+R10
 r1
 !s85 0
 31
-R10
 R11
 R12
-!i113 0
 R13
+!i113 0
+R14
 R5
 vfixed_point_multiplier
 R7
@@ -391,16 +414,16 @@ w1742067468
 Fmodule/fixed_point_multiplier.v
 !i122 420
 L0 1 63
-R8
 R9
+R10
 r1
 !s85 0
 31
-R10
 R11
 R12
-!i113 0
 R13
+!i113 0
+R14
 R5
 vfixed_point_multiplier_27
 R7
@@ -412,17 +435,17 @@ w1742147494
 8module/fixed_point_multiplier_27.v
 Fmodule/fixed_point_multiplier_27.v
 !i122 420
-Z14 L0 1 35
-R8
+Z15 L0 1 35
 R9
+R10
 r1
 !s85 0
 31
-R10
 R11
 R12
-!i113 0
 R13
+!i113 0
+R14
 R5
 vfixed_point_multiplier_27X16
 R7
@@ -434,17 +457,17 @@ w1742166715
 8module/fixed_point_multiplier_27X16.v
 Fmodule/fixed_point_multiplier_27X16.v
 !i122 420
-R14
-R8
+R15
 R9
+R10
 r1
 !s85 0
 31
-R10
 R11
 R12
-!i113 0
 R13
+!i113 0
+R14
 R5
 nfixed_point_multiplier_27@x16
 vhs_block
@@ -458,16 +481,16 @@ w1742144789
 Fmodule/hs_block.v
 !i122 420
 L0 1 30
-R8
 R9
+R10
 r1
 !s85 0
 31
-R10
 R11
 R12
-!i113 0
 R13
+!i113 0
+R14
 R5
 vhs_segment
 R7
@@ -480,16 +503,16 @@ w1745538848
 Fmodule/hs_segment.v
 !i122 420
 L0 1 130
-R8
 R9
+R10
 r1
 !s85 0
 31
-R10
 R11
 R12
-!i113 0
 R13
+!i113 0
+R14
 R5
 vmem_bneck
 R7
@@ -502,16 +525,16 @@ w1739830132
 Fmodule/mem_bneck.v
 !i122 420
 L0 1 17
-R8
 R9
+R10
 r1
 !s85 0
 31
-R10
 R11
 R12
-!i113 0
 R13
+!i113 0
+R14
 R5
 vmem_segment_bneck
 R7
@@ -524,16 +547,16 @@ w1739916891
 Fmodule/mem_segment_bneck.v
 !i122 420
 L0 1 33
-R8
 R9
+R10
 r1
 !s85 0
 31
-R10
 R11
 R12
-!i113 0
 R13
+!i113 0
+R14
 R5
 vmulti_adder_parallel
 !s110 1742146240
@@ -546,16 +569,16 @@ w1739653706
 Fmodule/multi_adder_parallel.v
 !i122 332
 L0 1 31
-R8
 R9
+R10
 r1
 !s85 0
 31
 !s108 1742146240.000000
 !s107 module/relu_segment.v|module/multi_adder_parallel.v|module/mem_segment_bneck.v|module/mem_bneck.v|module/hs_segment.v|module/hs_block.v|module/fixed_point_multiplier_27X16.v|module/fixed_point_multiplier_27.v|module/fixed_point_multiplier.v|module/fifo_seg_tb.v|module/fifo_segment.v|module/fifo_image_input.v|module/conv2d_relu_16.v|module/conv2d_adder_16.v|module/conv2d.v|module/adder_tree.v|
-R12
-!i113 0
 R13
+!i113 0
+R14
 R5
 vrelu_segment
 R7
@@ -568,16 +591,16 @@ w1740341817
 Fmodule/relu_segment.v
 !i122 420
 L0 1 43
-R8
 R9
+R10
 r1
 !s85 0
 31
-R10
 R11
 R12
-!i113 0
 R13
+!i113 0
+R14
 R5
 vtb_conv2d
 R7
@@ -586,20 +609,20 @@ R7
 IM931eD8;iaki`d=f3ePOA3
 R1
 w1745540457
-Z15 8module/tb_conv2d.v
-Z16 Fmodule/tb_conv2d.v
+Z16 8module/tb_conv2d.v
+Z17 Fmodule/tb_conv2d.v
 !i122 420
 L0 1 163
-R8
 R9
+R10
 r1
 !s85 0
 31
-R10
 R11
 R12
-!i113 0
 R13
+!i113 0
+R14
 R5
 vtb_cov2d
 !s110 1745089197
@@ -608,20 +631,20 @@ vtb_cov2d
 II0zi8f27ch]05fPkA2j7c1
 R1
 w1745089104
-R15
 R16
+R17
 !i122 384
 L0 1 116
-R8
 R9
+R10
 r1
 !s85 0
 31
 !s108 1745089197.000000
-R11
 R12
-!i113 0
 R13
+!i113 0
+R14
 R5
 vtb_hs
 !s110 1742145697
@@ -634,8 +657,8 @@ w1742145690
 Ftest/tb_hs.v
 !i122 331
 L0 1 109
-R8
 R9
+R10
 r1
 !s85 0
 31
@@ -643,7 +666,7 @@ r1
 !s107 test/tb_hs.v|module/hs_block.v|module/hs_segment.v|
 !s90 module/hs_segment.v|module/hs_block.v|test/tb_hs.v|
 !i113 0
-R13
+R14
 R5
 vtp_multi
 !s110 1740696186
@@ -656,8 +679,8 @@ w1740696180
 Ftp_multi.v
 !i122 150
 L0 1 54
-R8
 R9
+R10
 r1
 !s85 0
 31
@@ -665,5 +688,5 @@ r1
 !s107 tp_multi.v|
 !s90 tp_multi.v|
 !i113 0
-R13
+R14
 R5
