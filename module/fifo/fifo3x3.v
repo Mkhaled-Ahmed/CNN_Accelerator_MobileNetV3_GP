@@ -1,12 +1,11 @@
-module fifo_3x3(clk,
+module fifo3x3(clk,
     rst,
     input_pixel,
     wr_en,
     data_valid,
     output_window,
-    zero_buffer,
     end_of_layer,
-    in_valid,
+    window_done,
     layer_fifosize//0 = 112, 1 = 56
     );
     parameter maxfiforaw = 112;
@@ -19,50 +18,33 @@ module fifo_3x3(clk,
     localparam n26 = 26;
     localparam fifo_size = (maxfiforaw+2*padding)*(window_size-1)+(window_size);
     input  clk;
-    input zero_buffer;
     input  rst;
+    input window_done;
     input signed[bitsize-1:0] input_pixel;
     input wr_en;
     input end_of_layer;
-    output reg data_valid;
-    input in_valid;
-    input [$clog2(112):0]layer_fifosize;
+    reg data_valid_temp;
+    output  data_valid;
+    input [$clog2(112)-1:0]layer_fifosize;
     integer i;
 
     
 
-    output signed[(bitsize*window_size*window_size)-1:0] output_window;
+    output signed[(bitsize*25)-1:0] output_window;
 
     reg signed[bitsize-1:0]fifo[fifo_size-1:0];
 
-    //reg data_valid_temp;
-    reg [$clog2(fifo_size)-1:0] ptr;
+    //reg data_valid_temp_temp;
     reg [$clog2(fifo_size)-1:0] count;
-    reg [$clog2(fifo_size)-1:0] endcount;
     always @(posedge clk or negedge rst) begin
         if(!rst)begin
-            ptr<=0;
             count <= 0;
             for(i=0;i<fifo_size;i=i+1)begin
                 fifo[i] <= 0;
             end
         end
-        else begin//*if(wr_en 
-                if(in_valid) begin
-                    endcount<= 0;
-                    fifo[0] <= input_pixel;
-                end
-                if(zero_buffer) begin
-                    fifo[0] <= 14'd0;
-                    endcount=0;
-                    end
-                if(end_of_layer) begin
-                    for(i=0;i<fifo_size;i=i+1)begin
-                        fifo[i] <= 0;
-                    end
-                    ptr <= 0;
-                    count <= 0;
-                end
+        else if(wr_en) begin 
+                fifo[0] <= input_pixel;
                 if(layer_fifosize==112)begin
                     for(i=1;i<fifo_size;i=i+1)begin
                         fifo[i] <= fifo[i-1];
@@ -72,29 +54,34 @@ module fifo_3x3(clk,
                     fifo[1]<= fifo[0];
                     fifo[2] <= fifo[1];
                     fifo[59] <= fifo[2];
-                    for(i=60;i<116;i=i+1)begin
+                    for(i=60;i<=116;i=i+1)begin
                         fifo[i] <= fifo[i-1];
                     end
-                    fifo[116] <= fifo[173];
+                    fifo[173] <= fifo[116];
                     for(i=118;i<fifo_size;i=i+1)begin
                         fifo[i] <= fifo[i-1];
                     end
                 end
-                else if (layer_fifosize==26) begin
+                else if (layer_fifosize==28) begin
                     fifo[1]<= fifo[0];
                     fifo[2] <= fifo[1];
                     fifo[87] <= fifo[2];
-                    for(i=88;i<116;i=i+1)begin
+                    for(i=88;i<=116;i=i+1)begin
                         fifo[i] <= fifo[i-1];
                     end
-                    fifo[116] <= fifo[207];
+                    fifo[207] <= fifo[116];
                     for(i=208;i<fifo_size;i=i+1)begin
                         fifo[i] <= fifo[i-1];
                     end
                 end
-                count=count+1;
-                if(ptr < fifo_size-1)begin
-                    ptr <= ptr + 1;
+                if(window_done)begin
+                count<=0;
+                for(i=0;i<fifo_size;i=i+1)begin
+                    fifo[i] <= 0;
+                end
+                end
+                else if(!data_valid_temp) begin
+                    count <= count + 1 ;
                 end
                 
             end
@@ -104,30 +91,30 @@ module fifo_3x3(clk,
         case(layer_fifosize)
             n112: begin
                 if(count >= 112+2+3) begin
-                    data_valid = 1;
+                    data_valid_temp = 1;
                 end
                 else begin
-                    data_valid = 0;
+                    data_valid_temp = 0;
                 end
             end
             n56: begin
                 if(count >= 56+2+3) begin
-                    data_valid = 1;
+                    data_valid_temp = 1;
                 end
                 else begin
-                    data_valid = 0;
+                    data_valid_temp = 0;
                 end
             end
             n26: begin
-                if(count >= 26+2+3) begin
-                    data_valid = 1;
+                if(count >= 28+2+3) begin
+                    data_valid_temp = 1;
                 end
                 else begin
-                    data_valid = 0;
+                    data_valid_temp = 0;
                 end
             end
             default: begin
-                data_valid = 0;
+                data_valid_temp = 0;
             end
         endcase 
     end
@@ -136,12 +123,24 @@ module fifo_3x3(clk,
             assign output_window [bitsize-1:0] = fifo[(maxfiforaw+2*padding)*2+2];
             assign output_window [bitsize*2-1:bitsize] = fifo[(maxfiforaw+2*padding)*2+1];
             assign output_window [bitsize*3-1:bitsize*2] = fifo[(maxfiforaw+2*padding)*2];
-            assign output_window [bitsize*4-1:bitsize*3] = fifo[maxfiforaw+2*padding+2];
-            assign output_window [bitsize*5-1:bitsize*4] = fifo[maxfiforaw+2*padding+1];
-            assign output_window [bitsize*6-1:bitsize*5] = fifo[maxfiforaw+2*padding];
-            assign output_window [bitsize*7-1:bitsize*6] = fifo[2];
-            assign output_window [bitsize*8-1:bitsize*7] = fifo[1];
-            assign output_window [bitsize*9-1:bitsize*8] = fifo[0];
+
+            assign output_window [bitsize*4-1:bitsize*3] = 0;
+            assign output_window [bitsize*5-1:bitsize*4] = 0;
+
+            assign output_window [bitsize*6-1:bitsize*5] = fifo[maxfiforaw+2*padding+2];
+            assign output_window [bitsize*7-1:bitsize*6] = fifo[maxfiforaw+2*padding+1];
+            assign output_window [bitsize*8-1:bitsize*7] = fifo[maxfiforaw+2*padding];
+
+            assign output_window [bitsize*9-1:bitsize*8] = 0;
+            assign output_window [bitsize*10-1:bitsize*9] = 0;
+
+            assign output_window [bitsize*11-1:bitsize*10] = fifo[2];
+            assign output_window [bitsize*12-1:bitsize*11] = fifo[1];
+            assign output_window [bitsize*13-1:bitsize*12] = fifo[0];
+
+            assign output_window [(bitsize*25)-1:bitsize*13] = 0;
+
+            assign data_valid = data_valid_temp;
         end
         // else if(window_size==5)begin
         //     assign output_window[0] = fifo[0];
